@@ -1,0 +1,362 @@
+{
+  "Version": 1,
+  "Hash": "yAQGMM5H5bf/y2AFlou3sQ2Rws18oSQzyPQkT1aDyO0=",
+  "Source": "TextToHtmlApi",
+  "BasePath": "_content/TextToHtmlApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TextToHtmlApi\\wwwroot",
+      "Source": "TextToHtmlApi",
+      "ContentRoot": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\",
+      "BasePath": "_content/TextToHtmlApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\obj\\Debug\\net9.0\\compressed\\dsrhlw3u7k-oddc625nuq.gz",
+      "SourceId": "TextToHtmlApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/TextToHtmlApi",
+      "RelativePath": "index#[.{fingerprint=oddc625nuq}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "yiclm4mxb4",
+      "Integrity": "VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\index.html",
+      "SourceId": "TextToHtmlApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\",
+      "BasePath": "_content/TextToHtmlApi",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oddc625nuq",
+      "Integrity": "vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\obj\\Debug\\net9.0\\compressed\\dsrhlw3u7k-oddc625nuq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000002407817"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "415313"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 30 Jul 2025 16:01:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "566555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 30 Jul 2025 16:01:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\obj\\Debug\\net9.0\\compressed\\dsrhlw3u7k-oddc625nuq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "415313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 30 Jul 2025 16:01:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g="
+        }
+      ]
+    },
+    {
+      "Route": "index.oddc625nuq.html",
+      "AssetFile": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\obj\\Debug\\net9.0\\compressed\\dsrhlw3u7k-oddc625nuq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000002407817"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "415313"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 30 Jul 2025 16:01:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oddc625nuq"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk="
+        }
+      ]
+    },
+    {
+      "Route": "index.oddc625nuq.html",
+      "AssetFile": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "566555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 30 Jul 2025 16:01:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oddc625nuq"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vOwgZ3jpS9xfdKr5LI3PB6cIoXBWp8+geIi3Owkjofk="
+        }
+      ]
+    },
+    {
+      "Route": "index.oddc625nuq.html.gz",
+      "AssetFile": "C:\\Users\\furka\\Desktop\\Projeler\\TextToHtmlApi\\obj\\Debug\\net9.0\\compressed\\dsrhlw3u7k-oddc625nuq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "415313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 30 Jul 2025 16:01:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oddc625nuq"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VseVQpLSKR27s3vLvmSH1OWZFxHhle4cGdsmfJN5W7g="
+        }
+      ]
+    }
+  ]
+}

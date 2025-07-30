@@ -1,0 +1,6 @@
+@TextToHtmlApi_HostAddress = http://localhost:5115
+
+GET {{TextToHtmlApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

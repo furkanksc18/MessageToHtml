@@ -1,0 +1,82 @@
+<!-- Modal -->
+   <div id='imageModal' class='modal'>
+     <div class='modal-content'>
+       <div class='modal-header'>
+         <h3 class='modal-title' id='modalTitle'></h3>
+         <button class='close' onclick='closeModal()'>&times;</button>
+       </div>
+       <div class='modal-body'>
+         <img id='modalImage' src='' alt=''>
+       </div>
+     </div>
+   </div>
+   
+       <div id='videoModal' class='modal'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <h3 class='modal-title' id='videoModalTitle'></h3>
+          <button class='close' onclick='closeVideoModal()'>&times;</button>
+        </div>
+        <div class='modal-body'>
+          <video id='modalVideo' controls style='max-width: 100%; max-height: 80vh;'>
+            <source src='' type='video/mp4'>
+            Tarayıcınız video oynatmayı desteklemiyor.
+          </video>
+        </div>
+      </div>
+    </div>
+   
+   <script>
+     function openImageModal(src, title) {
+       document.getElementById('modalImage').src = src;
+       document.getElementById('modalTitle').textContent = title;
+       document.getElementById('imageModal').style.display = 'block';
+     }
+     
+           function openVideoModal(src, title) {
+        var video = document.getElementById('modalVideo');
+        var source = video.querySelector('source');
+        source.src = '';
+        video.load();
+        source.src = src;
+        video.load();
+        document.getElementById('videoModalTitle').textContent = title;
+        document.getElementById('videoModal').style.display = 'block';
+        
+        // Video yüklendiğinde otomatik oynat
+        video.onloadeddata = function() {
+          video.play();
+        };
+      }
+     
+     function closeModal() {
+       document.getElementById('imageModal').style.display = 'none';
+     }
+     
+     function closeVideoModal() {
+       var video = document.getElementById('modalVideo');
+       video.pause();
+       video.currentTime = 0;
+       var source = video.querySelector('source');
+       source.src = '';
+       video.load();
+       document.getElementById('videoModal').style.display = 'none';
+     }
+     
+     // ESC tuşu ile modal kapatma
+     window.onkeydown = function(event) {
+       if (event.key === 'Escape') {
+         closeModal();
+         closeVideoModal();
+       }
+     }
+     
+     // Modal dışına tıklayarak kapatma
+     window.onclick = function(event) {
+       if (event.target.className === 'modal') {
+         closeModal();
+         closeVideoModal();
+       }
+     }
+   </script>
+   

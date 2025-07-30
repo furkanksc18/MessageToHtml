@@ -1,0 +1,36 @@
+byük dosyalarla çalışmakta sorun yaşıyor
+Tema: Farklı renk temaları (ör. koyu/açık) seçilebilecek şekilde frontend ve HTML çıktısı güncellenebilir.
+
+2. Frontend Geliştirmeleri
+Daha modern bir arayüz (ör. React/Vue ile SPA).
+Yükleme sırasında progress bar veya yükleniyor animasyonu.
+
+3. Backend Geliştirmeleri
+Validasyon: Dosya boyutu limiti, içerik kontrolü (ör. WhatsApp formatı).
+Hata Yönetimi: Daha detaylı hata mesajları ve loglama.
+Unit Test: Özellikle ParseLine ve CreateHtml fonksiyonları için testler.
+Servis Katmanı: TextToHtml servisini interface üzerinden DI ile kullanmak (test edilebilirlik için).
+Çoklu Dil Desteği: HTML çıktısında dil seçimi (örn. tarih formatı).
+
+4. API Geliştirmeleri
+Ek Endpointler:
+Yalnızca mesaj sayısını dönen bir endpoint.
+Belirli bir kullanıcıya ait mesajları dönen endpoint.
+JSON Desteği: HTML yerine JSON çıktı seçeneği (isteğe bağlı).
+
+5. Güvenlik ve Performans
+CORS'u sadece gerekli domainlere açmak.
+Dosya yükleme limiti ve güvenlik kontrolleri.
+Büyük dosyalar için asenkron işleme veya arka plan queue sistemi.
+
+6. Dokümantasyon ve Kullanım Kolaylığı
+Proje köküne README.md eklenmeli (kurulum, kullanım, örnek istekler).
+Swagger açıklamaları detaylandırılabilir.
+
+7. Kod Temizliği ve Refaktör
+CSS'i ayrı dosyaya almak.
+Magic string ve sabitleri constant olarak tanımlamak.
+Kodda null kontrollerini iyileştirmek.
+
+
+ 
