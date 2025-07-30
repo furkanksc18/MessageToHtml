@@ -48,4 +48,7 @@ Ardından Program.cs nin bulunduğu dizinde "dotnet run" kodunu yazarak yada ter
 - Program çalıştırıldığında frontend otomatik olarak açılır
 
 ## İletişim
-Yardım, hata bildirimi veya öneriler içinw iletişim adreslerim
+Yardım, hata bildirimi veya öneriler içinw iletişim adreslerim:
+- [linkedin:](https://www.linkedin.com/in/furkanksc)
+- E-mail: furkankuscutr18@gmail.com
+
