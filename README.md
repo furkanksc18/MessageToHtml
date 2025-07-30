@@ -1,4 +1,4 @@
-# WhatsappToHtml
+# MessageToHtml
 
 ## Proje Açıklaması
 Bu proje, whatsapp sohbetinin dışarı aktarıldığında txt dosyasını html dosyasına çevirerek görüntü sunmayı amaçlamaktadır. Kullanıcıdan alınan .txt veya .zip formatındaki Whatsapp sohbet dökümanlarını işleyerek HTML formatına dönüştüren bir .NET Core Web API uygulamasıdır. Basit bir frontend arayüzü ile dosya yükleme imkanı sağlar.
