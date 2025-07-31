@@ -25,6 +25,10 @@ Ardından Program.cs nin bulunduğu dizinde "dotnet run" kodunu yazarak yada ter
 <br>**Dosyan indirildi artık dilediğiniz gibi taşıyabilir, saklayabilir, yada göstermek istediğiniz arkadaşınıza gönderebilirsin**
 <br>
 
+## Örnekler
+Örnek HTML çıktısı: [Görmek için tıkla](https://github.com/user-attachments/assets/a6cfedb2-d9db-4d49-90d8-d0603c8981db)
+
+
 ## Özellikler
 📄 .txt veya .zip uzantılı WhatsApp sohbet dökümanını alır
 
