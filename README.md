@@ -1,58 +1,135 @@
 # MessageToHtml
 
-## Proje Açıklaması
-Bu proje, whatsapp sohbetinin dışarı aktarıldığında txt dosyasını html dosyasına çevirerek görüntü sunmayı amaçlamaktadır. Kullanıcıdan alınan .txt veya .zip formatındaki Whatsapp sohbet dökümanlarını işleyerek HTML formatına dönüştüren bir .NET Core Web API uygulamasıdır. Basit bir frontend arayüzü ile dosya yükleme imkanı sağlar.
+WhatsApp sohbet dışa aktarımlarını (txt/zip/rar) analiz ederek, tarih aralığı ve kullanıcı filtreleriyle **filtrelenebilir bir HTML çıktısına** dönüştüren **ASP.NET Core Web API**.
 
-## Nasıl Çalıştırılır
-Projeyi kullanmak için .net9.0 sdk indirilmeli:
-- Winget kullanarak konsol indirme komutu -> winget install Microsoft.DotNet.SDK.9
+- **Amaç**: WhatsApp sohbet export dosyalarını okunabilir/taşınabilir HTML formatına çevirmek
+- **Hedef kullanıcı**: Sohbetini görünür HTML formatında saklamak isteyen herkes
+- **Platform**: Cross-platform (Windows / Linux / macOS), Web API
 
-Paketleri yükle:
-- Program.cs nin bulunduğu dizinde "dotnet restore" kodunu çalıştır.
+## Özellikler
 
-Ardından Program.cs nin bulunduğu dizinde "dotnet run" kodunu yazarak yada tercihen kullanılan debug aracı ile projeyi çalıştırabilirsiniz
+- **Dosya yükleme**: `.txt`, `.zip`, `.rar` sohbet dışa aktarımlarını kabul eder
+- **Ön analiz**: Sohbetteki kullanıcıları ve tarih aralığını çıkarır
+- **Filtrelenmiş HTML üretimi**: Belirlenen tarih aralığı ve kullanıcı seçimine göre HTML döner
+- **Swagger/OpenAPI**: Geliştirme ortamında Swagger UI ile API keşfi
+- **Statik içerik**: `wwwroot` üzerinden statik dosya servis edebilir
+
+## Ekran Görüntüsü
+
+> Placeholder
+
+```text
+/docs/screenshot.png
+```
+
+## Kurulum
+
+### Gereksinimler
+
+- `.NET 9 SDK`
+
+### Çalıştırma
+
+Proje dizininde:
+
+```bash
+dotnet restore
+dotnet run
+```
+
+Geliştirme ortamında Swagger UI varsayılan olarak etkinleşir.
 
 ## Kullanım
 
-- Program çalıştırıldığında frontend otomatik olarak çalışmaktadır. Eğer bir sorun yaşanıyorsa wwwroot/index.html dosyasının çalışan api ile aynı portta çalıştırılması gerekir. 
-- Whatsap sohbetinden dışarı aktarılan .zip dosyasını yada .zip dosyası içerisindeki .txt dosyasını dosya seç alanına ekledikten sonra Dosyayı Yükle Ve Analiz Et butonuna basılmalıdır. .txt dosyası yüklerseniz medyasız görüntüyle karşılaşırsınız. Detaylı rehbere ihtiyacınız varsa proje çalıştırıldığında açılan pencere üzerindeki Nasıl Çalışır tuşuna basın yada [Paragraf metniniz (2).pdf](https://github.com/user-attachments/files/21514693/Paragraf.metniniz.2.pdf) bu pdf dosyasını okuyun.
-- Dosyayı analiz ettikten sonra api tarafından analiz sonucu gelecektir.
-1. Kullanıcılar arasından mesajı sağda gözükecek kullanıcıyı seçin yada 3. bir şahıs tarafından bakmak istiyorsanız Tüm Kullanıcılar değerini seçin.
-2. Tema olarak sadece varsayılan tema yani Klasik (Varsayılan) kullanılmaktadır.
-3. Hangi tarih aralığındaki mesajları göstermek istiyorsanız onu seçin. Son tarih için 3 saat ileri alın, zaman sistemi doğru çalışmamaktadır.
-- Seçeneklerinizi yaptıktan sonra Html önizlemesini oluşturun, önizlemeyi beğenirseniz "HTML Dosyasını İndir" tuşuna basın.
-  
-<br>**Dosyan indirildi artık dilediğiniz gibi taşıyabilir, saklayabilir, yada göstermek istediğiniz arkadaşınıza gönderebilirsin**
-<br>
+API, `ConvertController` üzerinden aşağıdaki endpoint’leri sağlar.
 
-## Örnekler
-Örnek HTML çıktısı: [Görmek için tıkla](https://github.com/user-attachments/assets/a6cfedb2-d9db-4d49-90d8-d0603c8981db)
+### 1) Dosya Yükle (Ön Analiz)
 
+- **Endpoint**: `POST /api/convert/upload`
+- **Form field**: `file` (IFormFile)
+- **Amaç**: Dosyayı okuyup kullanıcı listesini ve tarih aralığını döndürmek
 
-## Özellikler
-📄 .txt veya .zip uzantılı WhatsApp sohbet dökümanını alır
+Örnek `curl`:
 
-🛠️ Satır satır ayrıştırarak sohbet mesajlarını işler
+```bash
+curl -X POST "https://localhost:5001/api/convert/upload" \
+  -F "file=@./chat.txt"
+```
 
-💬 JSON formatına dönüştürür, ardından HTML çıktısı üretir
+Örnek yanıt:
 
-🌐 API tabanlıdır, Swagger üzerinden test edilebilir
+```json
+{
+  "users": ["Kullanıcı 1", "Kullanıcı 2"],
+  "firstDate": "2024-01-01T00:00:00",
+  "lastDate": "2024-12-31T23:59:59",
+  "messageCount": 12345
+}
+```
 
-🧪 Veriler sadece bellek üzerinde işlenir, dosyalar kalıcı olarak kaydedilmez
+### 2) HTML Görüntüle (Filtreli)
 
-🔐 Temel güvenlik önlemleri alınmıştır; kullanıcılar birbirinin verisine erişemez
+- **Endpoint**: `POST /api/convert/view`
+- **Form fields**:
+  - `file`: sohbet dosyası
+  - `previewRequestJson`: JSON string
+- **Dönüş**: `text/html`
 
+`previewRequestJson` örneği:
 
-- wwwroot/index.html üzerinden kullanıcı arayüzü sunulur
+```json
+{
+  "startDate": "2024-01-01T00:00:00",
+  "endDate": "2024-02-01T00:00:00",
+  "user": "Kullanıcı 1",
+  "themeIndex": 0
+}
+```
 
-- Frontend, API ile aynı port üzerinden erişilir
+Örnek `curl`:
 
-- Dosya yükleme butonu ve API çağrısı içerir
+```bash
+curl -X POST "https://localhost:5001/api/convert/view" \
+  -F "file=@./chat.txt" \
+  -F 'previewRequestJson={"startDate":"2024-01-01T00:00:00","endDate":"2024-02-01T00:00:00","user":"Kullanıcı 1","themeIndex":0}' \
+  -H "Accept: text/html"
+```
 
-- Program çalıştırıldığında frontend otomatik olarak açılır
+Notlar:
 
-## İletişim
-Yardım, hata bildirimi veya öneriler içinw iletişim adreslerim:
-- [linkedin:](https://www.linkedin.com/in/furkanksc)
-- E-mail: furkankuscutr18@gmail.com
+- `startDate`/`endDate` zorunludur; `endDate < startDate` olamaz.
+- `.zip` / `.rar` için dosya türü içeriğe bakılarak tespit edilir.
 
+## Proje Yapısı
+
+```text
+TextToHtmlApi/
+  Controllers/
+    ConvertController.cs
+  Models/
+  Services/
+  HtmlText/
+  wwwroot/
+  Program.cs
+  TextToHtmlApi.csproj
+  appsettings.json
+  appsettings.Development.json
+```
+
+## Katkıda Bulunma
+
+Bu depo **açık kaynak değildir**. Fork/modify/redistribute gibi işlemler yalnızca yazılı izinle yapılabilir.
+
+- Hata bildirimi ve öneriler için Issue açabilirsiniz.
+- Katkı yapmak isterseniz önce bir Issue üzerinden değişikliği tartışın.
+
+## Lisans
+
+Bu proje **Proprietary** lisanslıdır (**All Rights Reserved**).
+
+- Kişisel kullanım için görüntüleme/çalıştırma izni verilebilir.
+- **Fork**, **değiştirme**, **yeniden dağıtım**, **ticari kullanım** ve türev çalışmalar **yazılı izin olmadan yasaktır**.
+
+Lisans/izin talepleri için: `furkankuscutr18@gmail.com`
+
+Detaylar için `LICENSE` dosyasına bakın.
